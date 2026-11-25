@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List — JavaScript Murni</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>📝 To-Do List</h1>
+      <p class="subtitle">Manajemen tugas harian berbasis DOM &amp; localStorage</p>
+    </header>
+
+    <!-- Form Tambah Tugas -->
+    <form id="form-todo">
+      <div class="input-utama">
+        <input type="text" id="input-todo" placeholder="Tulis tugas baru..." required>
+        <button type="submit" class="btn-tambah">Tambah</button>
+      </div>
+      <div class="input-opsi">
+        <label>
+          Prioritas:
+          <select id="input-prioritas">
+            <option value="sedang" selected>Sedang</option>
+            <option value="tinggi">Tinggi</option>
+            <option value="rendah">Rendah</option>
+          </select>
+        </label>
+        <label>
+          Tenggat:
+          <input type="date" id="input-tenggat">
+        </label>
+      </div>
+    </form>
+
+    <!-- Pencarian & Filter -->
+    <div class="kontrol">
+      <input type="search" id="input-cari" placeholder="Cari tugas...">
+      <div class="filter-group" id="filter-group">
+        <button type="button" class="filter-btn active" data-filter="semua">Semua</button>
+        <button type="button" class="filter-btn" data-filter="belum">Belum</button>
+        <button type="button" class="filter-btn" data-filter="selesai">Selesai</button>
+      </div>
+    </div>
+
+    <!-- Statistik & Progress -->
+    <div class="status-bar">
+      <div class="status-info">
+        <span id="stats">0 tugas belum selesai</span>
+        <span id="persen-selesai">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Daftar Tugas -->
+    <ul id="list-todo"></ul>
+
+    <!-- Aksi Bawah -->
+    <div class="footer-aksi">
+      <button type="button" id="btn-hapus-selesai" class="btn-sekunder" hidden>
+        Hapus Semua yang Selesai
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
